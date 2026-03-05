@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cookie Empire Clicker V2</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <main class="layout">
+    <section class="panel hero">
+      <h1>Cookie Empire Clicker V2</h1>
+      <p class="sub">Long-loop progression with skills, buffs, and ascension strategy.</p>
+
+      <div class="resource-box">
+        <div class="resource-row">
+          <span class="label">Cookies</span>
+          <span id="cookies" class="value">0</span>
+        </div>
+        <div class="resource-row">
+          <span class="label">Per click</span>
+          <span id="perClick" class="value">0</span>
+        </div>
+        <div class="resource-row">
+          <span class="label">Per second</span>
+          <span id="perSecond" class="value">0</span>
+        </div>
+        <div class="resource-row">
+          <span class="label">Click charge</span>
+          <span id="clickCharge" class="value">0%</span>
+        </div>
+      </div>
+
+      <button id="clickBtn" class="click-button" aria-label="Bake cookies">Bake Cookie</button>
+
+      <div class="streak-box">
+        <span>Combo</span>
+        <strong id="combo">x1.00</strong>
+        <small id="comboHint">Build combo and charge for active boosts.</small>
+      </div>
+
+      <div class="buff-box">
+        <span>Active buffs</span>
+        <div id="activeBuffs" class="buff-list"></div>
+      </div>
+
+      <div class="actions">
+        <button id="saveBtn" class="secondary">Save</button>
+        <button id="resetBtn" class="secondary danger">Reset</button>
+      </div>
+      <p id="toast" class="toast" role="status" aria-live="polite"></p>
+    </section>
+
+    <section class="panel store">
+      <div class="store-top">
+        <h2>Store</h2>
+        <div class="controls">
+          <label>
+            Buy mode
+            <select id="buyMode"></select>
+          </label>
+          <label>
+            Filter
+            <select id="storeFilter"></select>
+          </label>
+        </div>
+      </div>
+
+      <h3>Upgrades</h3>
+      <div id="upgradeList" class="list"></div>
+
+      <h3>Generators</h3>
+      <div id="generatorList" class="list"></div>
+    </section>
+
+    <section class="panel side">
+      <h2>Progression</h2>
+      <div class="meta-grid">
+        <div>
+          <span class="label">Lifetime cookies</span>
+          <strong id="lifetime">0</strong>
+        </div>
+        <div>
+          <span class="label">Golden chips</span>
+          <strong id="chips">0</strong>
+        </div>
+        <div>
+          <span class="label">Skill points</span>
+          <strong id="skillPoints">0</strong>
+        </div>
+        <div>
+          <span class="label">Clicks made</span>
+          <strong id="clicks">0</strong>
+        </div>
+      </div>
+
+      <div class="ascend-box">
+        <button id="ascendBtn" class="secondary ascend">Ascend</button>
+        <p class="hint" id="ascendHint">Reach more lifetime cookies for golden chips.</p>
+        <p class="hint" id="ascendPreview">Preview unavailable.</p>
+      </div>
+
+      <h3>Next milestones</h3>
+      <ul id="nextMilestones" class="milestones"></ul>
+
+      <h3>Rotating challenge</h3>
+      <div id="challengeCard" class="challenge"></div>
+    </section>
+
+    <section class="panel skills">
+      <h2>Skill Tree</h2>
+      <p class="sub">Persistent meta progression unlocked after first ascension.</p>
+      <div id="skillTree" class="skill-grid"></div>
+    </section>
+
+    <section class="panel achievements-panel">
+      <div class="row-between">
+        <h2>Achievements</h2>
+        <button id="claimAllBtn" class="secondary">Claim All</button>
+      </div>
+      <ul id="achievementList" class="achievements"></ul>
+    </section>
+  </main>
+
+  <script src="game.js"></script>
+</body>
+</html>

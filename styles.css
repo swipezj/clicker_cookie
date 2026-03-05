@@ -1,0 +1,360 @@
+:root {
+  --bg-0: #0f1117;
+  --bg-1: #1a2130;
+  --bg-2: #242f44;
+  --txt: #edf0f5;
+  --muted: #9aa7bd;
+  --gold: #f0c84b;
+  --green: #61d09f;
+  --blue: #6fb6ff;
+  --danger: #e07a7a;
+  --border: #36445f;
+  --shadow: 0 16px 34px rgba(4, 8, 14, 0.42);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Trebuchet MS", "Segoe UI", sans-serif;
+  color: var(--txt);
+  background:
+    radial-gradient(circle at 12% 15%, rgba(111, 182, 255, 0.18), transparent 36%),
+    radial-gradient(circle at 82% 4%, rgba(240, 200, 75, 0.12), transparent 34%),
+    linear-gradient(155deg, #0d1118, #171f2e 40%, #111724);
+  min-height: 100vh;
+}
+
+.layout {
+  width: min(1520px, 97vw);
+  margin: 1rem auto 1.5rem;
+  display: grid;
+  gap: 0.85rem;
+  grid-template-columns: 1.05fr 1fr 0.95fr;
+  grid-template-areas:
+    "hero store side"
+    "skills store achievements";
+}
+
+.panel {
+  background: linear-gradient(180deg, rgba(27, 35, 52, 0.92), rgba(20, 27, 40, 0.96));
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 0.9rem;
+  box-shadow: var(--shadow);
+}
+
+.hero { grid-area: hero; }
+.store { grid-area: store; }
+.side { grid-area: side; }
+.skills { grid-area: skills; }
+.achievements-panel { grid-area: achievements; }
+
+h1, h2, h3 {
+  margin: 0 0 0.55rem;
+}
+
+h1 {
+  font-size: 1.6rem;
+}
+
+h2 {
+  font-size: 1.08rem;
+}
+
+h3 {
+  font-size: 0.98rem;
+  margin-top: 0.9rem;
+}
+
+.sub {
+  margin: 0 0 0.8rem;
+  color: var(--muted);
+  font-size: 0.88rem;
+}
+
+.resource-box {
+  display: grid;
+  gap: 0.32rem;
+  margin-bottom: 0.8rem;
+}
+
+.resource-row {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.42rem 0.58rem;
+  background: rgba(0, 0, 0, 0.22);
+  border: 1px solid rgba(255, 255, 255, 0.04);
+  border-radius: 8px;
+}
+
+.label {
+  color: var(--muted);
+  font-size: 0.86rem;
+}
+
+.value {
+  color: #fff4d4;
+  font-variant-numeric: tabular-nums;
+}
+
+.click-button {
+  width: 100%;
+  margin: 0.45rem 0 0.6rem;
+  border: none;
+  border-radius: 999px;
+  padding: 0.9rem 0.95rem;
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: #211600;
+  background: linear-gradient(180deg, #ffe08d, #eab545);
+  cursor: pointer;
+  transition: transform 100ms ease, filter 130ms ease;
+}
+
+.click-button:hover {
+  filter: brightness(1.07);
+}
+
+.click-button:active {
+  transform: scale(0.97);
+}
+
+.streak-box,
+.buff-box,
+.challenge,
+.ascend-box {
+  display: grid;
+  gap: 0.22rem;
+  padding: 0.6rem;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 10px;
+}
+
+.streak-box strong {
+  font-size: 1.1rem;
+  color: var(--green);
+}
+
+.buff-box {
+  margin-top: 0.6rem;
+}
+
+.buff-list {
+  display: grid;
+  gap: 0.28rem;
+}
+
+.buff-chip {
+  border: 1px solid rgba(111, 182, 255, 0.42);
+  border-radius: 8px;
+  padding: 0.3rem 0.5rem;
+  color: #d6ecff;
+  font-size: 0.8rem;
+  background: rgba(111, 182, 255, 0.1);
+}
+
+.actions {
+  margin-top: 0.75rem;
+  display: flex;
+  gap: 0.5rem;
+}
+
+.secondary,
+.inline-btn,
+.claim-btn {
+  border: 1px solid var(--border);
+  background: linear-gradient(180deg, #334563, #26354f);
+  color: var(--txt);
+  border-radius: 8px;
+  padding: 0.48rem 0.66rem;
+  cursor: pointer;
+}
+
+.secondary:hover,
+.inline-btn:hover,
+.claim-btn:hover {
+  filter: brightness(1.1);
+}
+
+.danger {
+  color: #ffd7d7;
+  border-color: rgba(224, 122, 122, 0.52);
+}
+
+.ascend {
+  width: 100%;
+  border-color: rgba(240, 200, 75, 0.6);
+  color: #ffebbc;
+}
+
+.store-top {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 0.7rem;
+}
+
+.controls {
+  display: flex;
+  gap: 0.4rem;
+  flex-wrap: wrap;
+}
+
+.controls label {
+  display: grid;
+  font-size: 0.74rem;
+  color: var(--muted);
+  gap: 0.2rem;
+}
+
+select {
+  background: #1f2b3f;
+  border: 1px solid var(--border);
+  color: var(--txt);
+  border-radius: 8px;
+  padding: 0.3rem 0.35rem;
+}
+
+.list,
+.skill-grid,
+.achievements {
+  display: grid;
+  gap: 0.48rem;
+}
+
+.item,
+.skill-card,
+.achievements li,
+.milestones li {
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 0.55rem;
+  background: rgba(0, 0, 0, 0.22);
+}
+
+.item.locked,
+.skill-card.locked,
+.achievements li.locked {
+  opacity: 0.7;
+}
+
+.item strong,
+.skill-card strong,
+.row-between {
+  display: flex;
+  justify-content: space-between;
+  gap: 0.7rem;
+}
+
+.item p,
+.skill-card p,
+.achievements li p,
+small,
+.hint {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.82rem;
+}
+
+.meta-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.45rem;
+}
+
+.meta-grid div {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  border-radius: 8px;
+  padding: 0.45rem;
+  display: grid;
+}
+
+.meta-grid strong {
+  margin-top: 0.2rem;
+}
+
+.milestones,
+.achievements {
+  list-style: none;
+  padding: 0;
+  margin: 0.5rem 0 0;
+}
+
+.reward {
+  color: #c7f7dd;
+  font-size: 0.79rem;
+}
+
+.progress {
+  color: #d9e8ff;
+  font-size: 0.79rem;
+}
+
+.inline-btn,
+.claim-btn {
+  margin-top: 0.35rem;
+  font-size: 0.78rem;
+}
+
+.claim-btn {
+  border-color: rgba(97, 208, 159, 0.58);
+  color: #d7ffe9;
+}
+
+.tag-row {
+  display: flex;
+  gap: 0.33rem;
+  flex-wrap: wrap;
+}
+
+.tag {
+  font-size: 0.72rem;
+  padding: 0.16rem 0.35rem;
+  border-radius: 99px;
+  border: 1px solid rgba(111, 182, 255, 0.42);
+  background: rgba(111, 182, 255, 0.14);
+  color: #dcecff;
+}
+
+.branch {
+  margin-top: 0.6rem;
+}
+
+.toast {
+  min-height: 1.1rem;
+  margin-top: 0.62rem;
+  color: #ffe6a9;
+  font-size: 0.84rem;
+}
+
+@media (max-width: 1260px) {
+  .layout {
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas:
+      "hero side"
+      "store store"
+      "skills achievements";
+  }
+}
+
+@media (max-width: 880px) {
+  .layout {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "hero"
+      "store"
+      "side"
+      "skills"
+      "achievements";
+  }
+
+  .store-top {
+    align-items: stretch;
+    flex-direction: column;
+  }
+}
